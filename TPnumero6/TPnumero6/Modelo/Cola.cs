@@ -42,7 +42,19 @@ namespace TPnumero6.Modelo
         {
             if (inicial != null)
             {
+                Alumno dequueueAlumno = inicial.Alumno;
+                inicial = inicial.Siguiente;
+                return dequueueAlumno;
+            }
+            return null;
+        }
 
+        public Alumno Peek()
+        {
+            if (inicial != null)
+            {
+                Alumno peekAlumno = inicial.Alumno;
+                return peekAlumno;
             }
             return null;
         }
