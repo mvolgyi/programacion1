@@ -8,11 +8,15 @@ namespace TPnumero6.Modelo
 {
     class Nodo
     {
+        /// <summary>
+        /// En esta clase creamos el nodo del tipo alumno
+        /// </summary>
         public Alumno Alumno { get; set; }
         public Nodo Siguiente { get; set; }
 
         public Nodo(Alumno alumno)
         {
+            
             this.Alumno = alumno;
         }
     }

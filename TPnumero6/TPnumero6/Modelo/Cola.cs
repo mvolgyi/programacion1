@@ -21,16 +21,16 @@ namespace TPnumero6.Modelo
         {
             if (!IsFull())
             {
+                Nodo nodo = new Nodo(alumno);
                 if (inicial == null)
                 {
-                    Nodo nodo = new Nodo(alumno);
                     nodo.Siguiente = inicial; 
                     inicial = nodo; 
                     tamañoActual++; 
                 }
                 else
                 {
-                    Nodo nodo = new Nodo(alumno);
+                    //Nodo nodo = new Nodo(alumno);
                     Nodo ultimoNodo = ObtenerUltimoNodo(inicial);
                     ultimoNodo.Siguiente = nodo;
                 }

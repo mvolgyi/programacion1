@@ -8,6 +8,9 @@ namespace TPnumero6.Modelo
 {
     class Alumno
     {
+        /// <summary>
+        /// Esta es la clase Alumno en donde se setean las propidedades del Alumno
+        /// </summary>
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public Int64 DNI { get; set; }
