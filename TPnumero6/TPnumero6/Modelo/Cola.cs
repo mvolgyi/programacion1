@@ -6,35 +6,38 @@ using System.Threading.Tasks;
 
 namespace TPnumero6.Modelo
 {
-    class Cola
+    public class Cola
     {
         private int tamañoMaximo = 0;
         private int tamañoActual = 0;
         private Nodo inicial;
+        private Nodo final;
 
         public Cola(int tamañomaximo = 0)
         {
+            inicial = null;
+            final = null;
             this.tamañoMaximo = tamañomaximo;
+
         }
+       
 
         public void Enqueue(Alumno alumno)
         {
-            if (!IsFull())
+            Nodo nodo = new Nodo(alumno);
+            if (inicial == null)
             {
-                Nodo nodo = new Nodo(alumno);
-                if (inicial == null)
-                {
-                    nodo.Siguiente = inicial; 
-                    inicial = nodo; 
-                    tamañoActual++; 
-                }
-                else
-                {
-                    //Nodo nodo = new Nodo(alumno);
-                    Nodo ultimoNodo = ObtenerUltimoNodo(inicial);
-                    ultimoNodo.Siguiente = nodo;
-                }
-                
+                inicial = nodo;
+                inicial.Siguiente = null;
+                final = nodo;
+                tamañoActual++;
+            }
+            else
+            {
+                final.Siguiente = nodo;
+                nodo.Siguiente = null;
+                final = nodo;
+                tamañoActual++;
             }
         }
 
@@ -42,9 +45,10 @@ namespace TPnumero6.Modelo
         {
             if (inicial != null)
             {
-                Alumno dequueueAlumno = inicial.Alumno;
+                Alumno dequeueAlumno = inicial.Alumno;
                 inicial = inicial.Siguiente;
-                return dequueueAlumno;
+                tamañoActual--;
+                return dequeueAlumno;                
             }
             return null;
         }
@@ -61,7 +65,11 @@ namespace TPnumero6.Modelo
 
         public bool IsEmpty()
         {
-            return tamañoActual == 0;
+            if (tamañoActual == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool IsFull()
@@ -72,14 +80,5 @@ namespace TPnumero6.Modelo
                 return false;
 
         }
-
-        private Nodo ObtenerUltimoNodo(Nodo nodo)
-        {
-            if (nodo == null || nodo.Siguiente == null) 
-                return nodo;
-
-            return ObtenerUltimoNodo(nodo.Siguiente);
-        }
-
     }
 }

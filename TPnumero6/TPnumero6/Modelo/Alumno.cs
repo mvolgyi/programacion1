@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPnumero6.Modelo
 {
-    class Alumno
+    public class Alumno
     {
         /// <summary>
         /// Esta es la clase Alumno en donde se setean las propidedades del Alumno

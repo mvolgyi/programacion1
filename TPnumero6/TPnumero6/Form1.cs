@@ -13,7 +13,7 @@ namespace TPnumero6
 {
     public partial class Form1 : Form
     {
-        private Cola cola;
+        private Cola cola = new Cola();
 
         public Form1()
         {
@@ -29,7 +29,7 @@ namespace TPnumero6
         {
             cola = new Cola(5);
 
-            if (!cola.IsFull())
+            if (cola.IsFull() == false)
             {
                 Alumno alumno = new Alumno();
                 alumno.Nombre = textBoxCarga.Text;
@@ -46,14 +46,11 @@ namespace TPnumero6
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
-            if (!cola.IsEmpty())
+            if (cola.IsEmpty() == false)
             {
                 Alumno alumnoBorrado = cola.Dequeue();
-                if (alumnoBorrado != null)
-                {
-                    MessageBox.Show("El alumno borrado es: " + alumnoBorrado.Nombre);
-                }
-                listBoxAlumnos.Items.Remove(alumnoBorrado.Nombre);
+                MessageBox.Show("El alumno borrado es: " + alumnoBorrado.Nombre);
+                listBoxAlumnos.Items.RemoveAt(0);
             }
             else
             {
@@ -63,7 +60,7 @@ namespace TPnumero6
 
         private void buttonTope_Click(object sender, EventArgs e)
         {
-            if (!cola.IsEmpty())
+            if (cola.IsEmpty() == false)
             {
                 MessageBox.Show(cola.Peek().Nombre);
             }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TPnumero6.Modelo
 {
-    class Nodo
+    public class Nodo
     {
         /// <summary>
         /// En esta clase creamos el nodo del tipo alumno
