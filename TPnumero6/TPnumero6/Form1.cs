@@ -13,7 +13,7 @@ namespace TPnumero6
 {
     public partial class Form1 : Form
     {
-        private Cola cola = new Cola();
+        private Cola cola = new Cola(5);
 
         public Form1()
         {
@@ -27,7 +27,6 @@ namespace TPnumero6
 
         private void buttonCargar_Click(object sender, EventArgs e)
         {
-            if (cola == null) cola = new Cola(5);
 
             if (cola.IsFull() == false)
             {
