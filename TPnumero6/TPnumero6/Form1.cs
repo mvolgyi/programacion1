@@ -27,7 +27,7 @@ namespace TPnumero6
 
         private void buttonCargar_Click(object sender, EventArgs e)
         {
-            cola = new Cola(5);
+            if (cola == null) cola = new Cola(5);
 
             if (cola.IsFull() == false)
             {
