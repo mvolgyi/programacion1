@@ -69,6 +69,30 @@ namespace TPnumero6
             }
         }
 
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonFormulario_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            if(f.ShowDialog() == DialogResult.OK)
+            {
+                if (cola.IsFull() == false)
+                {
+                    Alumno alumno = new Alumno();
+                    alumno.Nombre = f.nombre;
+                    alumno.Apellido = f.apellido;
+                    cola.Enqueue(alumno);
+                    listBoxAlumnos.Items.Add(alumno.Nombre + " " + alumno.Apellido);
+                }
+                else
+                {
+                    MessageBox.Show("Cola llena...");
+                }
+            }
+        }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
