@@ -35,6 +35,7 @@
             this.listBoxAlumnos = new System.Windows.Forms.ListBox();
             this.textBoxCarga = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonFormulario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCargar
@@ -75,6 +76,7 @@
             this.buttonSalir.TabIndex = 3;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
             // listBoxAlumnos
             // 
@@ -101,11 +103,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Ingrese un nombre";
             // 
+            // buttonFormulario
+            // 
+            this.buttonFormulario.Location = new System.Drawing.Point(168, 262);
+            this.buttonFormulario.Name = "buttonFormulario";
+            this.buttonFormulario.Size = new System.Drawing.Size(75, 23);
+            this.buttonFormulario.TabIndex = 7;
+            this.buttonFormulario.Text = "Formulario";
+            this.buttonFormulario.UseVisualStyleBackColor = true;
+            this.buttonFormulario.Click += new System.EventHandler(this.buttonFormulario_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(446, 383);
+            this.Controls.Add(this.buttonFormulario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxCarga);
             this.Controls.Add(this.listBoxAlumnos);
@@ -130,6 +143,7 @@
         private System.Windows.Forms.ListBox listBoxAlumnos;
         private System.Windows.Forms.TextBox textBoxCarga;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonFormulario;
     }
 }
 
