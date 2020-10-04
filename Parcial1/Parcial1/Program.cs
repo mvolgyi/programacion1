@@ -26,6 +26,7 @@ namespace Parcial1
             Console.WriteLine("P para ver el primer alumnos de la cola.");
             Console.WriteLine("V para consultar si la cola esta vacia.");
             Console.WriteLine("L para consultar si la cola esta llena.");
+            Console.WriteLine("S para buscar alumno por apellido.");
             Console.WriteLine("X para salir.");
             opcion = Console.ReadLine();
 
@@ -74,7 +75,7 @@ namespace Parcial1
                     case "P":
                         if (cola.IsEmpty() == false)
                         {
-                            if (cola.Peek() != null)
+                            if ((cola.Peek().Nombre != null) && (cola.Peek().Nombre != null))
                             {
                                 Console.WriteLine(" ");
                                 Console.WriteLine("El primer alumno de la cola es: {0}", cola.Peek().Nombre + " " + cola.Peek().Apellido);
@@ -112,6 +113,33 @@ namespace Parcial1
                             Console.WriteLine("Todavia hay espacio en la cola");
                         }
                         break;
+
+                    case "S":
+                        if (cola.IsFull() != true)
+                        {
+                            Console.WriteLine(" ");
+
+                            string apellidoAlumno;
+                            Alumno alumno;
+                            Console.WriteLine("Ingrese el apellido del alumno que se desee buscar");
+                            apellidoAlumno = Console.ReadLine();
+                            alumno = cola.Busqueda(apellidoAlumno);
+                            if (alumno != null)
+                            {
+                                Console.WriteLine("Se econtro al alumno: {0} {1} {2}", alumno.Nombre, alumno.Apellido, alumno.FechaDeNac);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Alumno no encontrado.");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine(" ");
+                            Console.WriteLine("Todavia hay espacio en la cola");
+                        }
+                        break;
+
                     default:
                         Console.WriteLine("Por favor seleccione una opcion correcta.");
                         break;
@@ -124,13 +152,13 @@ namespace Parcial1
                 Console.WriteLine("P para ver el primer alumnos de la cola.");
                 Console.WriteLine("V para consultar si la cola esta vacia.");
                 Console.WriteLine("L para consultar si la cola esta llena.");
+                Console.WriteLine("S para buscar alumno por apellido.");
                 Console.WriteLine("X para salir.");
                 opcion = Console.ReadLine();
                 Console.WriteLine("  ");
             }
 
         }
-
 
     }
 }

@@ -64,16 +64,28 @@ namespace Parcial1.Modelo
 
         public bool IsEmpty()
         {
-            return (tamActual == 0);
+            if ((tamActual == 0))
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool IsFull()
         {
-            return (tamMax > 0 && tamMax == tamActual);
+            if ((tamMax > 0) && (tamMax == tamActual))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
 
         }
 
-        public Alumno Busqueda(string apellido, Nodo nodo)
+        public Alumno Busqueda(string apellido)
         {
             Nodo actual;
             actual = inicial;
@@ -86,7 +98,10 @@ namespace Parcial1.Modelo
                         return actual.Alumno;
                         break;
                     }
-                    actual = actual.Siguiente;
+                    else
+                    {
+                        actual = actual.Siguiente;
+                    }
                 }
             }
 
