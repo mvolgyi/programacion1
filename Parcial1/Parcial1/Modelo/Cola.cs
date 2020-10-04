@@ -8,16 +8,16 @@ namespace Parcial1.Modelo
 {
     class Cola
     {
-        private int tamMax;
-        private int tamActual;
+        private int tamañoMaximo;
+        private int tamañoActual;
         private Nodo inicial;
         private Nodo final;
 
-        public Cola(int tamMax)
+        public Cola(int tamMaximo)
         {
             inicial = null;
             final = null;
-            this.tamMax = tamMax;
+            this.tamañoMaximo = tamMaximo;
         }
 
         public void Enqueue(Alumno alumno)
@@ -28,14 +28,14 @@ namespace Parcial1.Modelo
                 inicial = nodo;
                 inicial.Siguiente = null;
                 final = nodo;
-                tamActual++;
+                tamañoActual++;
             }
             else
             {
                 final.Siguiente = nodo;
                 nodo.Siguiente = null;
                 final = nodo;
-                tamActual++;
+                tamañoActual++;
             }
 
         }
@@ -46,7 +46,7 @@ namespace Parcial1.Modelo
             {
                 Alumno dequeueAlumno = inicial.Alumno;
                 inicial = inicial.Siguiente;
-                tamActual--;
+                tamañoActual--;
                 return dequeueAlumno;
             }
             return null;
@@ -62,29 +62,6 @@ namespace Parcial1.Modelo
             return null;
         }
 
-        public bool IsEmpty()
-        {
-            if ((tamActual == 0))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool IsFull()
-        {
-            if ((tamMax > 0) && (tamMax == tamActual))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            
-
-        }
-
         public Alumno Busqueda(string apellido)
         {
             Nodo actual;
@@ -96,7 +73,6 @@ namespace Parcial1.Modelo
                     if (apellido == actual.Alumno.Apellido)
                     {
                         return actual.Alumno;
-                        break;
                     }
                     else
                     {
@@ -107,6 +83,17 @@ namespace Parcial1.Modelo
 
             return null;
         }
+
+        public bool IsEmpty()
+        {
+            return (tamañoActual == 0);
+        }
+
+        public bool IsFull()
+        {
+            return ((tamañoMaximo > 0) && (tamañoMaximo == tamañoActual));
+        }
+
     }
 }
 
