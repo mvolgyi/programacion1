@@ -12,9 +12,9 @@ using TPnumero6.Modelo;
 
 namespace TPnumero6
 {
-    public partial class Form2 : Form
+    public partial class FormularioSecundario : Form
     {
-        public Form2()
+        public FormularioSecundario()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace TPnumero6
 
         private string _nombre;
         private string _apellido;
-        public string nombre
+        public string nombre        //Devuelve el valor valor del TextBox del formulario Secundario y si le seteas un valor se lo setea a si mismo
         {
             get { return _nombre; }
             set { nombre = value; }
