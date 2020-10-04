@@ -1,6 +1,6 @@
 ﻿namespace TPnumero6
 {
-    partial class Form1
+    partial class FormularioPrincipal
     {
         /// <summary>
         /// Required designer variable.

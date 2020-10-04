@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TPnumero6.Modelo
+namespace Parcial1.Modelo
 {
-    public class Alumno
+    class Alumno
     {
-        /// <summary>
-        /// Clase Alumno con dos Propiedades Publicas
-        /// </summary>
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public DateTime FechaDeNac { get; set; }
     }
 }

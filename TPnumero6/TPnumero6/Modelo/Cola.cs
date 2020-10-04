@@ -8,12 +8,12 @@ namespace TPnumero6.Modelo
 {
     public class Cola
     {
-        private int tamañoMaximo = 0;
+        private int tamañoMaximo = 0; // Defini variable privada para que solo el programador pueda tener acceso a ella.
         private int tamañoActual = 0;
-        private Nodo inicial;
+        private Nodo inicial;   //Cree una variable incial de nodo y otra final
         private Nodo final;
 
-        public Cola(int tamañomaximo = 0)
+        public Cola(int tamañomaximo = 0)   // Inicializo la cola CONSTRUCTOR
         {
             inicial = null;
             final = null;
@@ -22,15 +22,15 @@ namespace TPnumero6.Modelo
         }
        
 
-        public void Enqueue(Alumno alumno)
+        public void Enqueue(Alumno alumno) //Recibe un tipo de dato: Alumno
         {
-            Nodo nodo = new Nodo(alumno);
+            Nodo nodo = new Nodo(alumno);       //Creo un nodo de tipo nodo y le paso el alumno que va a recibir
             if (inicial == null)
             {
                 inicial = nodo;
                 inicial.Siguiente = null;
                 final = nodo;
-                tamañoActual++;
+                tamañoActual++; //contador
             }
             else
             {
@@ -46,14 +46,14 @@ namespace TPnumero6.Modelo
             if (inicial != null)
             {
                 Alumno dequeueAlumno = inicial.Alumno;
-                inicial = inicial.Siguiente;
-                tamañoActual--;
+                inicial = inicial.Siguiente;    
+                tamañoActual--; // Vamos dejando espacio en la cola al sacarle nodos
                 return dequeueAlumno;                
             }
             return null;
         }
 
-        public Alumno Peek()
+        public Alumno Peek()    // Se ve que hay en el primer item. Solo lectura.
         {
             if (inicial != null)
             {
@@ -63,7 +63,7 @@ namespace TPnumero6.Modelo
             return null;
         }
 
-        public bool IsEmpty()
+        public bool IsEmpty()   //Cheuqea si esta vacia la cola
         {
             if (tamañoActual == 0)
             {
@@ -72,7 +72,7 @@ namespace TPnumero6.Modelo
             return false;
         }
 
-        public bool IsFull()
+        public bool IsFull()    //Chequea si esta llena la cola
         {
             if (tamañoMaximo > 0 && tamañoMaximo == tamañoActual)
                 return true;

@@ -11,11 +11,11 @@ using TPnumero6.Modelo;
 
 namespace TPnumero6
 {
-    public partial class Form1 : Form
+    public partial class FormularioPrincipal : Form
     {
-        private Cola cola = new Cola(5);
+        private Cola cola = new Cola(10);
 
-        public Form1()
+        public FormularioPrincipal()
         {
             InitializeComponent();
         }
@@ -49,7 +49,7 @@ namespace TPnumero6
             {
                 Alumno alumnoBorrado = cola.Dequeue();
                 MessageBox.Show("El alumno borrado es: " + alumnoBorrado.Nombre);
-                listBoxAlumnos.Items.RemoveAt(0);
+                listBoxAlumnos.Items.RemoveAt(0);   //Borra el primer valor de la cola
             }
             else
             {
@@ -57,7 +57,7 @@ namespace TPnumero6
             }
         }
 
-        private void buttonTope_Click(object sender, EventArgs e)
+        private void buttonTope_Click(object sender, EventArgs e)   // Mira el primer item que esta en la Cola
         {
             if (cola.IsEmpty() == false)
             {
@@ -69,14 +69,14 @@ namespace TPnumero6
             }
         }
 
-        private void buttonSalir_Click(object sender, EventArgs e)
+        private void buttonSalir_Click(object sender, EventArgs e)  // Cierra el Form
         {
             Application.Exit();
         }
 
-        private void buttonFormulario_Click(object sender, EventArgs e)
+        private void buttonFormulario_Click(object sender, EventArgs e) //Abre le Formulario
         {
-            Form2 f = new Form2();
+            FormularioSecundario f = new FormularioSecundario();
             if(f.ShowDialog() == DialogResult.OK)
             {
                 if (cola.IsFull() == false)

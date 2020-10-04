@@ -14,10 +14,10 @@ namespace TPnumero6.Modelo
         public Alumno Alumno { get; set; }
         public Nodo Siguiente { get; set; }
 
-        public Nodo(Alumno alumno)
+        public Nodo(Alumno alumno) //Es el constructor que recibe un objeto de tipo alumno y se lo setea al nodo.
         {
             
-            this.Alumno = alumno;
+            this.Alumno = alumno;   // Inicializa el objeto alumno
         }
     }
 }
