@@ -17,7 +17,7 @@ namespace Parcial1.Modelo
         {
             inicial = null;
             final = null;
-            this.tamActual = tamMax;
+            this.tamMax = tamMax;
         }
 
         public void Enqueue(Alumno alumno)
