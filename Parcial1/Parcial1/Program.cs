@@ -115,7 +115,7 @@ namespace Parcial1
                         break;
 
                     case "S":
-                        if (cola.IsFull() != true)
+                        if (cola.IsEmpty() != true)
                         {
                             Console.WriteLine(" ");
 
